@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Hello from Flask</title>
+
+{% if pokemon %}
+  <h1>{{ pokemon["name"].upper() }}</h1>
+  <img src="{{pokemon["sprites"]["other"]["official-artwork"]["front_default"]}}">
+
+{% else %}
+  <h1>Enter the name of one of the original Pokemon</h1>
+  <form action="{{ url_for("get_pokemon")}}" method="post">
+    <input type="text" name="name" value="{{ request.form['name'] }}">
+    <button type="submit">SUBMIT</button>
+{% endif %}
