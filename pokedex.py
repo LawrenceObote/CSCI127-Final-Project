@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/",methods=('GET', 'POST'))
 def pokedex():
     pokemon = get_pokemon()
-    return render_template('pokemon.html', pokemon=pokemon)
+    return render_template('index.html', pokemon=pokemon)
 
 @app.route("/",methods=('GET', 'POST'))
 def get_pokemon():
